@@ -1,20 +1,20 @@
 # Automatic Company Name Standardization Tool
 
-Aplikasi web berbasis Streamlit untuk melakukan standardisasi nama perusahaan menggunakan fuzzy matching dan AI (Google Gemini).
+A Streamlit-based web application for standardizing company names using fuzzy matching and AI (Google Gemini).
 
-## Fitur Utama
+## Key Features
 
-- **Fuzzy Matching**: Mencocokkan nama perusahaan dengan database referensi
-- **AI Standardization**: Menggunakan Google Gemini API untuk standardisasi nama
-- **Double Check**: Fuzzy matching kedua untuk hasil AI
-- **Batch Processing**: Memproses multiple files sekaligus
-- **Location-aware**: Penanganan khusus berdasarkan alamat (contoh: Shopee Singapore vs Indonesia)
+- **Fuzzy Matching**: Matches company names against a reference database.
+- **AI Standardization**: Uses the Google Gemini API to standardize names.
+- **Double Check**: Second fuzzy matching for AI results.
+- **Batch Processing**: Processes multiple files simultaneously.
+- **Location-aware**: Special handling based on location (e.g., Shopee Singapore vs. Indonesia).
 
-## Instalasi
+## Installation
 
-### 1. Clone atau Download Files
-Pastikan Anda memiliki file-file berikut:
-- `app.py` (file utama aplikasi)
+### 1. Clone or Download Files
+Ensure you have the following files:
+- `app.py` (main application file)
 - `requirements.txt` (dependencies)
 
 ### 2. Install Dependencies
@@ -22,52 +22,52 @@ Pastikan Anda memiliki file-file berikut:
 pip install -r requirements.txt
 ```
 
-### 3. Dapatkan Google Gemini API Key
-1. Kunjungi [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Buat API key baru
-3. Simpan API key dengan aman
-
-### 4. Jalankan Aplikasi
+### 3. Get Google Gemini API Key
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a new API key
+3. Store your API key securely
+   
+### 4. Run the Application
 ```bash
 streamlit run app.py
 ```
 
-## Cara Penggunaan
+## How to Use
 
 ### 1. Upload Files
-- **Main Data File**: File Excel yang berisi nama perusahaan yang akan distandarisasi
-- **Reference Files**: File Excel yang berisi nama perusahaan yang sudah distandarisasi (opsional)
+- **Main Data File**: An Excel file containing company names to be standardized.
+- **Reference Files**: Excel files containing pre-standardized company names (optional).
 
-### 2. Konfigurasi
-- Masukkan **Gemini API Key** di sidebar
-- Pilih kolom yang berisi **nama perusahaan**
-- Pilih kolom **alamat** (opsional, membantu untuk matching berdasarkan lokasi)
-- Atur **rate limit** untuk API calls
+### 2. Configuration
+- Enter **Gemini API Key** in the sidebar
+- Select the column containing **company names**
+- Select the **address** column (optional, helps with location-based matching)
+- Set the **rate limit** for API calls
 
-### 3. Proses
-1. Klik "Start Processing"
-2. Aplikasi akan melakukan 3 tahap:
-   - **Fuzzy Matching 1**: Mencocokkan dengan database referensi
-   - **AI Standardization**: Menggunakan Gemini untuk nama yang tidak cocok
-   - **Fuzzy Matching 2**: Double check hasil AI
+### 3. Process
+1. Click "Start Processing"
+2. The application will perform 3 stages:
+   - **Fuzzy Matching 1**: Matches against the reference database.
+   - **AI Standardization**: Uses Gemini for unmatched names.
+   - **Fuzzy Matching 2**: Double-checks AI results.
 
 ### 4. Download
-- Download hasil dalam format Excel
-- Lihat statistik dan nama yang tidak berhasil distandarisasi
-
+- Download the results in Excel format.
+- View statistics and names that could not be standardized.
+  
 ## Format File Input
 
 ### Main Data File
-Harus mengandung kolom:
-- Nama perusahaan (bisa nama kolom apa saja)
-- Alamat (opsional)
+Must contain columns for:
+- Company name (can be any column name).
+- Address (optional).
 
 ### Reference Files
-Harus mengandung kolom:
-- `company_name_standardized`: Nama perusahaan yang sudah distandarisasi
-- `company_name`: Nama perusahaan asli (opsional)
+Must contain columns for:
+- `company_name_standardized`: The standardized company name.
+- `company_name`: The original company name (optional).
 
-## Contoh Hasil Standardisasi
+## Example Standardization Results
 
 | Input | Output |
 |-------|--------|
@@ -79,42 +79,42 @@ Harus mengandung kolom:
 ## Troubleshooting
 
 ### Error: "API connection failed"
-- Pastikan API key valid
-- Cek koneksi internet
-- Pastikan quota API belum habis
+- Ensure the API key is valid
+- Check internet connection
+- Ensure API quota has not been exceeded
 
 ### Error: "File loading failed"
-- Pastikan file dalam format Excel (.xlsx atau .xls)
-- Cek apakah file tidak corrupt
-- Pastikan file memiliki kolom yang diperlukan
+- Ensure the file is in Excel format (.xlsx or .xls)
+- Check if the file is corrupted
+- Ensure the file has the necessary columns
 
 ### Performance Issues
-- Kurangi rate limit jika terlalu banyak error
-- Proses file dalam batch yang lebih kecil
-- Pastikan koneksi internet stabil
+- Reduce the rate limit if there are too many errors
+- Process files in smaller batches
+- Ensure a stable internet connection
 
 ## Rate Limiting
 
 - Default: 10 requests per minute
-- Dapat disesuaikan di sidebar
-- Terlalu tinggi dapat menyebabkan error quota
-- Terlalu rendah akan memperlambat proses
+- Can be adjusted in the sidebar
+- Setting it too high can cause quota errors
+- Setting it too low will slow down the process
 
 ## Catatan Penting
 
-1. **API Cost**: Setiap request ke Gemini API dikenakan biaya
-2. **Data Privacy**: Data diproses lokal di browser, tidak disimpan di server
-3. **File Size**: Untuk file besar, proses mungkin membutuhkan waktu lama
-4. **Backup**: Selalu backup data asli sebelum memproses
-
+1. **API Cost**: Each request to the Gemini API is free for up to 1000 requests
+2. **Data Privacy**: Data is processed locally in the browser and is not stored on a server
+3. **File Size**: For large files, processing may take a long time
+4. **Backup**: Always back up your original data before processing
+   
 ## Support
 
-Jika mengalami masalah:
-1. Cek console browser untuk error messages
-2. Pastikan semua dependencies terinstall
-3. Verifikasi format file input
-4. Cek API key dan quota
+If you encounter issues:
+1. Check the browser console for error messages
+2. Ensure all dependencies are installed
+3. Verify the input file format
+4. Check your API key and quota
 
 ---
 
-**Didasarkan atas ide dan inovasi oleh Kerlyn Deslia Andeskar**
+**Based on the idea and innovation by Kerlyn Deslia Andeskar**
