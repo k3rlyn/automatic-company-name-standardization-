@@ -117,4 +117,4 @@ Jika mengalami masalah:
 
 ---
 
-**Dibuat oleh Kerlyn Deslia Andeskar menggunakan Streamlit dan Google Gemini AI**
+**Didasarkan atas ide dan inovasi oleh Kerlyn Deslia Andeskar**
