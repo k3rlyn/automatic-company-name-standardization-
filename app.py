@@ -381,8 +381,8 @@ def process_file(df, reference_dfs, model, requests_per_minute=10, address_colum
 # UI Streamlit
 def main():
     st.title("🏢 Company Name Standardization Tool")
-    st.markdown("Upload Excel files to standardize company names using fuzzy matching and AI")
-    st.markdown("Based on the idea and innovation by Kerlyn Deslia Andeskar")
+    st.markdown("Upload Excel files to standardize company names using fuzzy matching and AI (Gemini API)")
+    st.markdown("- Based on the idea and innovation by Kerlyn Deslia Andeskar -")
 
     # Sidebar untuk konfigurasi
     st.sidebar.header("Configuration")
