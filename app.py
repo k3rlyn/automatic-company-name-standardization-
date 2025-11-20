@@ -34,7 +34,7 @@ def setup_gemini_api(api_key):
     """Setup Gemini API dengan key yang diberikan"""
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash-lite')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         return model
     except Exception as e:
         st.error(f"Error setting up Gemini API: {str(e)}")
